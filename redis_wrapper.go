@@ -1,7 +1,6 @@
 package rmq
 
 import (
-	"log"
 	"time"
 
 	"github.com/go-redis/redis"
@@ -85,7 +84,7 @@ func (wrapper RedisWrapper) FlushDb() {
 	wrapper.rawClient.FlushDB()
 }
 
-// checkErr returns true if there is no error, false if the result error is nil and panics if there's another error
+// checkErr returns true if there is no error, false if the result error is nil and logs if there's another error
 func checkErr(err error) (ok bool) {
 	switch err {
 	case nil:
@@ -93,7 +92,7 @@ func checkErr(err error) (ok bool) {
 	case redis.Nil:
 		return false
 	default:
-		log.Panicf("rmq redis error is not nil %s", err)
+		logger.Errf("rmq redis error is not nil %s", err)
 		return false
 	}
 }
