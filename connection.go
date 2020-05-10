@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/adjust/uniuri"
-	"github.com/go-redis/redis"
+	redis "github.com/go-redis/redis/v7"
 )
 
 const heartbeatDuration = time.Minute

@@ -14,7 +14,7 @@ type Logger interface {
 type DefaultLogger struct{}
 
 func (DefaultLogger) Errf(t string, opts ...interface{}) {
-	fmt.Fprintf(os.Stderr, t, opts)
+	fmt.Fprintf(os.Stderr, t, opts...)
 }
 
 func (DefaultLogger) Panicf(t string, opts ...interface{}) {
