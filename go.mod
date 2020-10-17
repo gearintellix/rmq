@@ -3,7 +3,7 @@ module github.com/gearintellix/rmq
 go 1.12
 
 require (
-	github.com/adjust/gocheck v0.0.0-20131111155431-fbc315b36e0e
-	github.com/adjust/uniuri v0.0.0-20130923163420-498743145e60
+	github.com/adjust/rmq/v3 v3.0.0
 	github.com/go-redis/redis/v7 v7.2.0
+	github.com/stretchr/testify v1.5.1
 )
